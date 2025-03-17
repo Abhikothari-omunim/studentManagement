@@ -1,0 +1,13 @@
+<h1>ADD Student Here...</h1>
+<div id="formdiv">
+    <form #studentForm="ngForm" (ngSubmit)="addStudent(studentForm.value)">
+    <label for="">FirstName</label><br>
+    <input type="text"  name="first_name" ngModel><br>
+    <label for="">LastName</label>
+    <input type="text" ngModel name="last_name"><br>
+    <label for="">Mobile</label><br>
+    <input type="text" ngModel name="mobile"><br>
+    <button id="submitbtn">Add Student</button>
+    </form>
+    <span>{{successMessage}}</span>
+</div>

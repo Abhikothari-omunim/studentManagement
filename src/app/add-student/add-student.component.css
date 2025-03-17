@@ -1,0 +1,111 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Overall Form Container */
+#formdiv {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading Style */
+h1 {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 28px;
+    color: #4CAF50;
+    margin-bottom: 30px;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #f8f8f8;
+    transition: border-color 0.3s ease;
+}
+
+/* Focus Effect on Input Fields */
+input[type="text"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Submit Button Styles */
+#submitbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 15px;
+}
+
+/* Submit Button Hover Effect */
+#submitbtn:hover {
+    background-color: #45A049;
+    transform: scale(1.05);
+}
+
+/* Success Message Styling */
+span {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #4CAF50;
+    visibility: hidden; /* Initially hide success message */
+}
+
+/* Show the success message when it's available */
+span.show {
+    visibility: visible;
+}
+
+/* Add Responsiveness */
+@media (max-width: 768px) {
+    #formdiv {
+        padding: 20px;
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    input[type="text"] {
+        font-size: 14px;
+    }
+
+    #submitbtn {
+        font-size: 16px;
+    }
+}
