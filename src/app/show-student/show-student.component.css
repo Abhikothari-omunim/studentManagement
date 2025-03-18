@@ -1,76 +1,120 @@
-/* Basic Reset */
-* {
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-/* Table Styles */
-table {
-    width: 100%;
-    border-collapse: collapse; /* Ensures borders don't double up */
-    margin: 30px 0;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+  }
+  
+  /* Styling for the form */
+  #updateStudentForm {
+    width: 30%;
+    margin: 10px auto;
+    padding: 10px;
     background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds some depth */
-}
-
-th, td {
-    padding: 12px 15px; /* Adds space in cells */
-    text-align: left;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    margin: 10px 0;
     font-size: 16px;
-    font-family: 'Arial', sans-serif;
-    border-bottom: 1px solid #ddd; /* Adds border below cells */
-}
-
-th {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button[type="submit"] {
+    padding: 12px 20px;
     background-color: #4CAF50;
     color: white;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-td {
-    color: #333;
-}
-
-/* Hover Effect */
-tbody tr:hover {
-    background-color: #f1f1f1; /* Light grey hover effect */
-}
-
-/* Zebra Striping (alternating row colors) */
-tbody tr:nth-child(even) {
-    background-color: #f9f9f9; /* Light background for even rows */
-}
-
-tbody tr:nth-child(odd) {
-    background-color: #ffffff; /* White background for odd rows */
-}
-
-/* Table Container */
-table {
-    max-width: 1200px;
-    margin: auto; /* Centers the table */
-    overflow-x: auto; /* Allows scrolling if the table overflows */
-}
-
-/* Add Responsiveness */
-@media (max-width: 768px) {
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  /* Styling for the table */
+  table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  td {
+    background-color: #f9f9f9;
+  }
+  
+  button {
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.3s;
+  }
+  
+  button#updatestudent {
+    background-color: #ff9800;
+    color: white;
+  }
+  
+  button#updatestudent:hover {
+    background-color: #f57c00;
+  }
+  
+  button#deleteStudent {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  button#deleteStudent:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    #updateStudentForm {
+      width: 80%;
+    }
+  
+    table {
+      width: 100%;
+    }
+  
     th, td {
-        font-size: 14px;
-        padding: 10px;
+      font-size: 14px;
+      padding: 8px;
     }
-
-    table {
-        width: 100%;
-        font-size: 14px;
-    }
-
-    /* Make table scrollable on small screens */
-    table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-}
+  }
+  
+  

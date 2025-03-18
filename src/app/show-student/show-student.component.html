@@ -1,12 +1,26 @@
 <br>
+
+
+
+<div *ngIf="showForm" id="updateStudentForm">
+  <form #updateStudentForm="ngForm" (ngSubmit)="updateStudent(getsinglestudentRecord?.id ,updateStudentForm.value)">
+    <input type="text" placeholder="Student Name" name="first_name" [ngModel]="getsinglestudentRecord?.first_name">
+    <input type="text" placeholder="Last name" name="last_name" [ngModel]="getsinglestudentRecord?.last_name">
+    <input type="text" placeholder="Mobile num" name="mobile" [ngModel]="getsinglestudentRecord?.mobile">
+    <button type="submit">Update Student</button>
+  </form>
+</div>
+
+
+
 <table>
     <thead>
       <tr>
         <th>ID</th>
-        <th>First NAME</th>
+        <th>FIRST NAME</th>
         <th>LAST NAME</th>
         <th>MOBILE</th>
-        <!-- <th>UPDATE</th> -->
+        <th>UPDATE</th>
         <th>DELETE</th>
       </tr>
     </thead>
@@ -17,7 +31,12 @@
           <td>{{student.first_name}}</td>
           <td>{{student.last_name}}</td>
           <td>{{student.mobile}}</td>
-          <td><button id="deleteStudent" (click)="deleteStudent(student.id)">Delete Student</button></td>
+          <td><button id="updatestudent" (click)="selectStudent(student.id)">
+            <i class="fas fa-edit"></i> <!-- Edit Icon -->
+          </button></td>
+          <td><button id="deleteStudent" (click)="deleteStudent(student.id)">
+            <i class="fas fa-trash"></i> <!-- Delete Icon -->
+          </button></td>
           </tr>
         }
       

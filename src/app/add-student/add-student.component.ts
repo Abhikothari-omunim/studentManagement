@@ -1,30 +1,37 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { StudentService } from '../student.service';
-import { RouterLink } from '@angular/router';
-
+import { Router } from '@angular/router';  // <-- Import Router for navigation
 
 @Component({
   selector: 'app-add-student',
-  imports: [FormsModule , RouterLink],
+  imports: [FormsModule],
   templateUrl: './add-student.component.html',
-  styleUrl: './add-student.component.css'
+  styleUrls: ['./add-student.component.css'] 
 })
 export class AddStudentComponent {
 
-  bookValue : any;
+  bookValue: any;
+  successMessage: string = '';
 
-  constructor(private student:StudentService){
-    
-  }
-  successMessage:any;
-  addStudent(data:any){
-    // console.warn(data)
-    this.student.saveStudent(data).subscribe((result)=>{
-      console.log(result);
-      if(result){
-        this.successMessage = "Student Added SuccessFully.....";
+  constructor(private student: StudentService, private router: Router) {}
+
+  addStudent(data: any) {
+    // Call the service to save the student
+    this.student.saveStudent(data).subscribe(
+      (result) => {
+        if (result) {
+          this.successMessage = 'Student Added Successfully!';
+          this.router.navigate(['/showAllStudents']);  // Assuming your student list route is '/student-list'
+          setTimeout(() => {
+            this.successMessage = ''; // Hide the success message after 3 seconds
+          }, 3000); // 3 seconds
+        }
+      },
+      (error) => {
+        console.error('Error:', error);
+        this.successMessage = 'Failed to add student. Please try again later.';
       }
-    })
+    );
   }
 }

@@ -21,5 +21,13 @@ export class StudentService {
     return this.http.delete("http://127.0.0.1:8000/api/students/"+id);
   }
 
+  updateStudent(id:any,data:any){
+    return this.http.put("http://127.0.0.1:8000/api/edit/"+id,data);
+  }
+
+  getSingleStudentRecord(id:any){
+    return this.http.get("http://127.0.0.1:8000/api/getsinglestudent/"+id)
+  }
+
 }
 
